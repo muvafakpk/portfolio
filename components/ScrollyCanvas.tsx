@@ -63,8 +63,11 @@ export default function ScrollyCanvas({ scrollYProgress }: ScrollyCanvasProps) {
     if (!canvas) return;
     
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const width = window.innerWidth;
+      const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+      
+      canvas.width = width;
+      canvas.height = height;
       drawImage(Math.round(frameIndex.get()));
     };
     

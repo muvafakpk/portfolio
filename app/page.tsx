@@ -20,8 +20,8 @@ export default function Home() {
     <main className="min-h-screen bg-[#121212] selection:bg-white/20 text-white">
       {/* 500vh container mapped to scrollYProgress */}
       <div ref={containerRef} className="h-[500vh] relative w-full">
-        {/* Sticky viewport */}
-        <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#121212]">
+        {/* Sticky viewport - using dvh for mobile address bar compatibility */}
+        <div className="sticky top-0 h-[100dvh] w-full overflow-hidden bg-[#121212]">
           <ScrollyCanvas scrollYProgress={scrollYProgress} />
           <Overlay scrollYProgress={scrollYProgress} />
         </div>
