@@ -27,7 +27,7 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
       >
         <div className="text-center translate-y-[-10%] md:translate-y-[-5%]">
           <motion.h1 
-            className="text-6xl md:text-[11rem] font-black tracking-[calc(-0.06em)] text-white leading-[1.0] drop-shadow-2xl mb-8 uppercase"
+            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-[calc(-0.06em)] text-white leading-[1.0] drop-shadow-2xl mb-8 uppercase"
           >
             Muvafak<br />
             <span className="text-neutral-500 italic">Pattillath.</span>
