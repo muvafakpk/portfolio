@@ -97,8 +97,10 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className={`group relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-white/[0.03] border border-white/[0.08] p-4 md:p-10 transition-all duration-500 hover:bg-white/[0.06] hover:border-white/[0.15] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] block`}
+              whileHover={{ 
+                y: typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? -10 : 0 
+              }}
+              className={`group relative overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-white/[0.03] border border-white/[0.08] p-4 md:p-10 transition-all duration-500 md:hover:bg-white/[0.06] md:hover:border-white/[0.15] md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] block`}
             >
               {/* Neon Glow Background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />

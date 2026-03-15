@@ -83,8 +83,8 @@ function SkillCard({ skillGroup, index }: { skillGroup: typeof SKILLS[0], index:
   return (
     <motion.div
       style={{
-        rotateX,
-        rotateY,
+        rotateX: typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? rotateX : 0,
+        rotateY: typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? rotateY : 0,
         transformStyle: "preserve-3d",
       }}
       onMouseMove={handleMouseMove}
@@ -93,7 +93,7 @@ function SkillCard({ skillGroup, index }: { skillGroup: typeof SKILLS[0], index:
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="relative group p-4 md:p-8 rounded-2xl md:rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md transition-all duration-300 hover:bg-white/[0.05] hover:border-white/[0.15]"
+      className="relative group p-4 md:p-8 rounded-2xl md:rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md transition-all duration-300 md:hover:bg-white/[0.05] md:hover:border-white/[0.15]"
     >
       {/* Glow Effect */}
       <div 
